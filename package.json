@@ -1,0 +1,52 @@
+{
+  "name": "webpack5_from-scratch",
+  "version": "0.0.1",
+  "description": "webpack5 from scratch",
+  "main": "src/main.js",
+  "keywords": [],
+  "author": "Di Meglio Giovanna",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.2.0",
+    "css-minimizer-webpack-plugin": "^3.0.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "5.3.2",
+    "mini-css-extract-plugin": "^2.2.0",
+    "node-sass": "^6.0.1",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "postcss-loader": "^6.1.1",
+    "sass-loader": "^12.1.0",
+    "webpack": "5.49.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "start": "webpack serve --config webpack.dev.js && node -e \"console.log('open browser at http://localhost:8081/index.html');\" ",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "cypress/"
+    ],
+    "moduleNameMapper": {
+      "\\.mp3": "<rootDir>/__mock__/fileMock.js",
+      "\\.png": "<rootDir>/__mock__/fileMock.js",
+      "\\.webp": "<rootDir>/__mock__/fileMock.js",
+      "\\.scss": "<rootDir>/__mock__/fileMock.js"
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.15.0"
+  }
+}

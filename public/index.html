@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="webpack5" />
+    <meta name="theme-color" content="#cf3a39" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+    <!-- FOR A FASTER PAGE -->
+    <meta http-equiv="Cache-Control" content="max-age=1209600" />
+    <link
+      rel="preload"
+      href="./assets/circular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link
+      rel="mask-icon"
+      href="./favicon/safari-pinned-tab.svg"
+      color="#ebe303"
+    />
+  </head>
+
+  <body>
+    <main id="app"></main>
+
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          try {
+            navigator.serviceWorker.register("./service-worker.js");
+          } catch (e) {
+            alert("ServiceWorker registration failed. Sorry about that.");
+          }
+        });
+      } else {
+        document.querySelector(".alert").removeAttribute("hidden");
+      }
+    </script>
+
+    <noscript>
+      This site uses JavaScript. Please enable JavaScript in your browser.
+    </noscript>
+  </body>
+</html>
