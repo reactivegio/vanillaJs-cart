@@ -2,6 +2,7 @@
 <html lang="it">
   <head>
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta http-equiv="Cache-control" content="public" max-age="31536000" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -11,13 +12,7 @@
     <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
     <!-- FOR A FASTER PAGE -->
     <meta http-equiv="Cache-Control" content="max-age=1209600" />
-    <link
-      rel="preload"
-      href="./assets/circular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    <link rel="preload" as="font" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -42,8 +37,25 @@
     />
   </head>
 
-  <body>
-    <main id="app"></main>
+  <body class="day">
+    <main id="app">
+      <h1 id="titleApp" class="center light"></h1>
+      <div id="flagsContainer"></div>
+      <div
+        class="darkLightMode"
+        onclick='document.body.className = document.body.className === "night" ? "day" : "night"'
+      >
+        <div id="sun-moon"></div>
+      </div>
+      <div class="flexyContainer">
+        <div>
+          <h2 class="light" id="titleProduct"></h2>
+        </div>
+        <div>
+          <h2 class="light right" id="titleCart"></h2>
+        </div>
+      </div>
+    </main>
 
     <script>
       // Check that service workers are supported

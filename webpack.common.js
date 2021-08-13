@@ -16,6 +16,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
+        { from: `${paths.src}/config/`, to: "./config/" },
         { from: `${paths.src}/assets/`, to: "./assets/" },
         {
           from: `${paths.public}/service-worker.js`,

@@ -1,0 +1,11 @@
+$container-max-widths: (
+  xs: 319px,
+  sm: 540px,
+  md: 720px,
+  lm: 1440px,
+  lg: 1920px,
+);
+
+@function get-breakpoints($key: "md") {
+  @return map-get($container-max-widths, $key);
+}

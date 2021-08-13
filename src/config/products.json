@@ -1,0 +1,62 @@
+[
+    {
+        "id": "P1-0",
+        "name": {
+            "en": "Product one",
+            "fr": "Produit un",
+            "it": "Prodotto uno",
+            "ru": "Продукт один",
+            "zh": "产品一"
+        },
+        "price": 1.99,
+        "currency": "€"
+    },
+    {
+        "id": "P2-1",
+        "name": {
+            "en": "Product two",
+            "fr": "Produit deux",
+            "it": "Prodotto due",
+            "ru": "Продукт два",
+            "zh": "产品二"
+        },
+        "price": 33.98,
+        "currency": "€"
+    },
+    {
+        "id": "P2-2",
+        "name": {
+            "en": "Product three",
+            "fr": "Produit",
+            "it": "Prodotto tre",
+            "ru": "Продукт",
+            "zh": "产品二"
+        },
+        "price": 3.58,
+        "currency": "€"
+    },
+    {
+        "id": "P2-3",
+        "name": {
+            "en": "Product four",
+            "fr": "Produit",
+            "it": "Prodotto quattro",
+            "ru": "Продукт",
+            "zh": "产品二"
+        },
+        "price": 103.58,
+        "currency": "€"
+    },
+    {
+        "id": "P2-4",
+        "name": {
+            "en": "Product five",
+            "fr": "Produit",
+            "it": "Prodotto cinque",
+            "ru": "Продукт",
+            "zh": "产品二"
+        },
+        "price": 103.58,
+        "currency": "€"
+    }
+]

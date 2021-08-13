@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "Circular";
+  src: url("../assets/fonts/circular.eot");
+  src: url("../assets/fonts/circular.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/circular.woff2") format("woff2"),
+    url("../assets/fonts/circular.woff") format("woff"),
+    url("../assets/fonts/circular.ttf") format("truetype"),
+    url("../assets/fonts/circular.svg#.") format("svg");
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  margin: 0;
+  font-weight: 500;
+  font-family: "Circular", sans-serif;
+  transition: background-color 0.5s ease;
+}
+body.night {
+  background-color: #474e5d;
+  color: #fff;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.light {
+  font-weight: 100;
+}
+
+.flexyContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  > div {
+    margin: 32px 16px;
+    &:first-of-type {
+      flex-basis: 60%;
+    }
+    &:last-of-type {
+      flex-basis: calc(40% - 64px);
+    }
+    > h2 {
+      border-bottom: 1px solid #aaa;
+    }
+  }
+}
+
+.darkLightMode {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px 0 4px 4px;
+  padding: 10px 30px 10px 30px;
+  background-color: #474e5d;
+  float: left;
+  height: 30px;
+  position: fixed;
+  top: 50px;
+}
+
+#sun-moon {
+  position: absolute;
+  z-index: 1;
+  left: 15px;
+  right: 0;
+  bottom: 0;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+#sun-moon:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  background: #474e5d;
+  transition: border-radius 0.5s ease, background-color 0.5s ease,
+    width 0.5s ease, transform 0.5s ease;
+}
+
+#sun-moon:after {
+  content: "";
+  white-space: nowrap;
+  /* text-indent: 20px; */
+  /* line-height: 415px; */
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid #f5f8f8;
+  box-shadow: 0 0 0 0 #f5f8f8, 0 0 0 3px #a5abb0, 0 0 0 10px transparent;
+  box-sizing: border-box;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+body.night #sun-moon {
+  background-color: #fff;
+}
+
+body.night #sun-moon:before {
+  background: #474e5d;
+  border-radius: 50%;
+  width: 150%;
+  transform: translate(-5%, -35%) rotate(-25deg);
+}
+
+body.night #sun-moon:after {
+  content: "";
+  box-shadow: 0 0 0 0 #3f3f4c, 0 0 0 0 #3f3f4c, 0 0 0 3px #fff,
+    0 0 0 100px transparent;
+  border-color: #3f3f4c;
+}

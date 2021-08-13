@@ -1,0 +1,247 @@
+.cart-list {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.15);
+  max-height: calc(100vh - 200px);
+  display: block;
+  overflow: scroll;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &:-webkit-scrollbar {
+    display: none;
+  }
+  tr {
+    &:nth-child(even) {
+      td {
+        background: #eee;
+      }
+    }
+  }
+  td,
+  th {
+    padding: 1rem;
+    h3,
+    h4 {
+      margin: 0;
+    }
+  }
+  th {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    text-align: left;
+
+    &.head-quantity {
+      text-align: center;
+    }
+    &.head-price,
+    &:last-of-type {
+      text-align: right;
+    }
+    .total-title {
+      text-align: right;
+    }
+  }
+  td {
+    background: #f9f9f9;
+    .title {
+      font-weight: 400;
+      font-size: 0.9em;
+    }
+    .price {
+      text-align: right;
+    }
+    .quantity {
+      position: relative;
+      padding: 0 1rem;
+      text-align: center;
+      .qty-handler {
+        display: flex;
+        justify-content: space-between;
+        div {
+          width: 1rem;
+          height: 1rem;
+          line-height: 16px;
+          text-align: center;
+          background: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          transition: background 0.4s;
+          cursor: pointer;
+          &:hover {
+            background: #000;
+          }
+          &:last-of-type {
+            line-height: 13px;
+          }
+          &.quantity-value {
+            background: #fff;
+            color: #333;
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+    .total {
+      text-align: right;
+    }
+  }
+}
+.draw {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  margin: 4rem auto 2rem;
+  background: #eaeaea;
+  overflow: hidden;
+  .cactus {
+    z-index: 1;
+    position: absolute;
+    width: 1.2rem;
+    height: 10rem;
+    border-radius: 7px 7px 0 0;
+    background: currentColor;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      bottom: -32px;
+      width: 1.2rem;
+      height: 2rem;
+      transform: skew(40deg);
+      transform-origin: top center;
+      border-radius: 0 0 6px 6px;
+
+      animation: lightAngle 8s linear infinite alternate;
+    }
+    &:nth-child(1) {
+      bottom: 0;
+      left: 50%;
+      transform: transalteX(-50%);
+      color: #aaa;
+    }
+    &:nth-child(2) {
+      bottom: 4.5rem;
+      left: 2rem;
+      transform: scale(0.4);
+      color: #dadada;
+      &::before {
+        background: darken(#dadada, 20%);
+      }
+    }
+    &:nth-child(3) {
+      bottom: 2.5rem;
+      right: 2rem;
+      transform: scale(0.6);
+      color: #ccc;
+      &::before {
+        background: darken(#ccc, 20%);
+      }
+    }
+    .arm {
+      position: absolute;
+      width: 3rem;
+      height: 1rem;
+      background: currentColor;
+      &::before {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        content: "";
+        width: 1rem;
+        height: 3rem;
+        background: currentColor;
+        border-radius: 6px 6px 0 0;
+      }
+      &:first-of-type {
+        top: 35%;
+      }
+      &:last-of-type {
+        top: 55%;
+        left: -1.8rem;
+        &::before {
+          right: auto;
+          left: 0;
+        }
+      }
+    }
+  }
+  .sky {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: #fcfcfc;
+    overflow: hidden;
+    .montain {
+      position: absolute;
+      left: 42%;
+      bottom: -2rem;
+      width: 4rem;
+      height: 4rem;
+      background: #d8d8d8;
+      transform: rotate(45deg);
+      border-radius: 8px 0 0 0;
+      &.two {
+        left: 27%;
+        transform: rotate(45deg) scale(0.6);
+        background: #d8d8d8;
+      }
+    }
+    .sun {
+      position: absolute;
+      top: 20px;
+      left: -2rem;
+      width: 2rem;
+      height: 2rem;
+      background: #d4d4d4;
+      border-radius: 50%;
+
+      animation: sunWalk 8s linear infinite alternate;
+    }
+  }
+}
+.no-items-text {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+// ANIMATIONS
+@keyframes sunWalk {
+  from {
+    left: -2rem;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes lightAngle {
+  0%,
+  20% {
+    transform: skew(40deg);
+  }
+  80%,
+  100% {
+    transform: skew(-40deg);
+  }
+}
+
+.night {
+  .no-items-text {
+    color: rgba(256, 256, 256, 0.7);
+  }
+  .cart-list {
+    tr {
+      td {
+        background-color: #333;
+      }
+      &:nth-child(even) {
+        td {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
