@@ -1,7 +1,5 @@
 
-> What I cannot create, I do not understand - Richard Feynman
-
-This is a simple project to help on configure webpack5 on a new VanillaJs project with scss as preprocessed css.
+This is a simple project to implement a simple ecommerce with vanillaJS.
 
 
 **Step1**: install dependencies
