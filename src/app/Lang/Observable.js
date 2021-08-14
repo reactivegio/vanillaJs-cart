@@ -1,8 +1,8 @@
 import { setTitle } from "../actions/setTitle";
 import { replaceProductTranslation } from "../actions/replaceProductTranslation";
 import { setCurrentLang } from "../actions/setCurrentLang";
+import UserCart from "../Cart/index";
 const { i18n } = require("../i18n/index");
-const { Cart } = require("../Cart/index");
 const { Lang } = require("./index");
 
 class LangObservable {
@@ -46,7 +46,7 @@ onload = function () {
       setTitle(".cartBtn", "addCart", "text");
       setCurrentLang();
       replaceProductTranslation();
-      Cart().load();
+      UserCart.load();
     },
     error(err) {
       console.error("something went wrong : " + err);

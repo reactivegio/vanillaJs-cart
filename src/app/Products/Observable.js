@@ -1,4 +1,4 @@
-const { Cart } = require("../Cart");
+import UserCart from "../Cart/index";
 const { Products } = require("./index");
 
 class ProductsObservable {
@@ -35,10 +35,10 @@ window.addEventListener("load", onload);
 onload = function () {
   observable.subscribe({
     next(x) {
-      if (Cart().elements.find((el) => el.id === x.id)) {
-        Cart().updateCountElement(x.id, "+");
+      if (UserCart.elements.find((el) => el.id === x.id)) {
+        UserCart.updateCountElement(x.id, "+");
       } else {
-        Cart().add(x.obj, true);
+        UserCart.add(x.obj, true);
       }
     },
     error(err) {

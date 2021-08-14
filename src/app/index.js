@@ -5,8 +5,9 @@ import "./Products/load";
 import "../scss/style.scss";
 import { setTitle } from "./actions/setTitle";
 import { DropdownElementTemplate } from "../template/dropdownElement.template";
+import UserCart from "./Cart/index";
 const { i18n } = require("./i18n/index");
-const { Cart } = require("./Cart/index");
+
 const { Lang } = require("./Lang/index");
 const { Products } = require("./Products");
 
@@ -32,8 +33,8 @@ export const App = {
     setTitle("#titleProduct", "products", "html");
     setTitle("#titleCart", "cart", "html");
     Products.load();
-
-    Cart().load();
+    debugger;
+    UserCart.load();
 
     try {
       CartObservable();

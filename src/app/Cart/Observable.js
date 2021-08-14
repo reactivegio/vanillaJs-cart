@@ -1,5 +1,3 @@
-const { Cart } = require("./index");
-
 class CartObservable {
   constructor(subscribeFunction) {
     this._subscribeFunction = subscribeFunction;
@@ -28,20 +26,6 @@ const observableCart = new CartObservable((subscriber) => {
       }
     });
 
-    /*
-    Array.from(document.querySelectorAll(".addBtn")).forEach(function (
-      element
-    ) {
-      element.addEventListener("click", addProduct);
-    });
-
-    Array.from(document.querySelectorAll(".removeBtn")).forEach(function (
-      element
-    ) {
-      element.addEventListener("click", removeProduct);
-    });
-    */
-
     return subscriber.complete();
   } catch (err) {
     subscriber.error(err);
@@ -54,7 +38,7 @@ onload = function () {
   observableCart.subscribe({
     next(x, type) {
       debugger;
-      Cart().updateCountElement(x, type);
+      UserCartupdateCountElement(x, type);
     },
     error(err) {
       console.error("something went wrong : " + err);
