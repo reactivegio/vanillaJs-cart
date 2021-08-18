@@ -1,9 +1,9 @@
 //import "../UI/notification";
-import { ProductCardTemplate } from "../../template/productCard.template";
+import { ProductCardTemplate } from "../template/productCard.template";
 const { i18n } = require("../i18n/index");
-const { Lang } = require("../Lang/index");
+import SiteLang from "../Lang/index";
 const { Products } = require("./index");
-import "../../scss/products.scss";
+import "../scss/products.scss";
 //const { UI } = require("../UI/index");
 
 Products.load = function () {
@@ -20,10 +20,10 @@ Products.load = function () {
           "beforeend",
           ProductCardTemplate(
             el.id,
-            Lang.get("name", el),
+            SiteLang.get("name", el),
             el.price,
             el.currency,
-            Lang.get("addCart", i18n.translations)
+            SiteLang.get("addCart", i18n.translations)
           )
         );
       });

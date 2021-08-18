@@ -1,24 +1,24 @@
-import { CartObservable } from "./Cart/Observable";
-import { LangObservable } from "./Lang/Observable";
-import { ProductsObservable } from "./Products/Observable";
 import "./Products/load";
-import "../scss/style.scss";
+import "./scss/style.scss";
 import { setTitle } from "./actions/setTitle";
-import { DropdownElementTemplate } from "../template/dropdownElement.template";
+import { DropdownElementTemplate } from "./template/dropdownElement.template";
+import SiteLang from "./Lang/index";
 import UserCart from "./Cart/index";
 const { i18n } = require("./i18n/index");
-
-const { Lang } = require("./Lang/index");
+const { CartObservable } = require("./Cart/Observable");
+const { LangObservable } = require("./Lang/Observable");
 const { Products } = require("./Products");
+const { ProductsObservable } = require("./Products/Observable");
 
 export const App = {
   init() {
+    debugger;
     // when first parameter is not passed then retrieve browser language
-    Lang.set(null, i18n.translations);
-    Lang.load();
+    SiteLang.set(null, i18n.translations);
+    SiteLang.load();
     const dropdown = document.querySelector("#langDropdown");
     // render the list of lang dropdown
-    Lang.options.languages.map((lang) => {
+    SiteLang.options.languages.map((lang) => {
       dropdown.insertAdjacentHTML(
         "beforeend",
         DropdownElementTemplate(
@@ -33,7 +33,6 @@ export const App = {
     setTitle("#titleProduct", "products", "html");
     setTitle("#titleCart", "cart", "html");
     Products.load();
-    debugger;
     UserCart.load();
 
     try {

@@ -1,8 +1,8 @@
-import { CartTemplate } from "../../template/cart.template";
-import { CartElementTemplate } from "../../template/cartElement.template";
-import { EmptyTemplate } from "../../template/empty.template";
+import { CartTemplate } from "../template/cart.template";
+import { CartElementTemplate } from "../template/cartElement.template";
+import { EmptyTemplate } from "../template/empty.template";
 import { i18n } from "../i18n";
-import { Lang } from "../Lang/index";
+import SiteLang from "../Lang/index";
 
 class Cart {
   constructor() {
@@ -32,10 +32,10 @@ class Cart {
         .insertAdjacentHTML(
           "afterend",
           CartTemplate(
-            Lang.translate(i18n.translations["product"]),
-            Lang.translate(i18n.translations["price"]),
-            Lang.translate(i18n.translations["quantity"]),
-            Lang.translate(i18n.translations["total"])
+            SiteLang.translate(i18n.translations["product"]),
+            SiteLang.translate(i18n.translations["price"]),
+            SiteLang.translate(i18n.translations["quantity"]),
+            SiteLang.translate(i18n.translations["total"])
           )
         );
     }
@@ -45,7 +45,7 @@ class Cart {
         ...product,
         nameTranslate: product.nameTranslate
           ? product.nameTranslate
-          : Lang.get("name", product),
+          : SiteLang.get("name", product),
         count: product.count ? product.count : 1,
       })
     );
@@ -134,5 +134,5 @@ class Cart {
 }
 
 const UserCart = new Cart();
-debugger;
+
 export default UserCart;

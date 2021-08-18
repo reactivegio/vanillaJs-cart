@@ -1,3 +1,5 @@
+import UserCart from "./index";
+
 class CartObservable {
   constructor(subscribeFunction) {
     this._subscribeFunction = subscribeFunction;
@@ -38,7 +40,7 @@ onload = function () {
   observableCart.subscribe({
     next(x, type) {
       debugger;
-      UserCartupdateCountElement(x, type);
+      UserCart.updateCountElement(x, type);
     },
     error(err) {
       console.error("something went wrong : " + err);

@@ -3,7 +3,7 @@ import { replaceProductTranslation } from "../actions/replaceProductTranslation"
 import { setCurrentLang } from "../actions/setCurrentLang";
 import UserCart from "../Cart/index";
 const { i18n } = require("../i18n/index");
-const { Lang } = require("./index");
+const SiteLang = require("./index");
 
 class LangObservable {
   constructor(subscribeFunction) {
@@ -38,7 +38,7 @@ window.addEventListener("load", onload);
 onload = function () {
   observableLang.subscribe({
     next(x) {
-      Lang.set(x, i18n.translations);
+      SiteLang.set(x, i18n.translations);
       /** Rerender all text */
       setTitle("#titleApp", "title", "html");
       setTitle("#titleProduct", "products", "html");

@@ -1,8 +1,8 @@
-import { TitleTemplate } from "../../template/title.template";
-const { Lang } = require("../Lang/index");
+import { TitleTemplate } from "../template/title.template";
+import SiteLang from "../Lang/index";
 
 export const setTitle = (selector, stringTranslate, type) => {
-  const langTranslate = Lang.get(stringTranslate);
+  const langTranslate = SiteLang.get(stringTranslate);
   const typeElem = {
     html: TitleTemplate(langTranslate),
     text: langTranslate,
